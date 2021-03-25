@@ -74,16 +74,15 @@ span {
 #difficulty {
     font-size: 15px;
     height:40px;
-    width: 140px;
+    width: 110px;
     border-radius: 10px/10px;
     border-radius: 10px;
     box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
     border: double 1px rgba(255, 0, 140, 0.9);
     background-color: rgba(8, 8, 8, 0.1);
     color: rgba(255, 0, 140, 0.9);
-    font-size: 50px;
     font-family: "Train One", sans-serif;
-    font-size: 24px;
+    font-size: 15px;
 }
 
 .gameInfo {
