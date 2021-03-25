@@ -1,0 +1,154 @@
+body {
+    font-family: "Train One", sans-serif;
+    color:rgba(255, 0, 140, 0.9);
+    background-color: rgb(8, 8, 8);
+    background-image: url("pic.jpeg");
+}
+
+.game-container {
+    background-color: rgba(10,10,10,0.5);
+    transform: translate(-50%, 0%);
+    position: relative;
+    left:50%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
+    border: double 1px rgba(0, 217, 255, 0.9);
+    border-radius: 10px/10px;
+    padding: 20px;
+    width: 90%;
+}
+
+.gamePanel {
+    position: fixed;
+    left:50%;
+    transform: translate(-50%, -0%);
+    border: double 1px rgba(0, 217, 255, 0.9);
+    border-radius: 10px/10px;
+    box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
+    padding: 20px
+}
+
+.cell {
+    color: white;
+    border: solid 0.5px;
+    border-top: 1px;
+    font-size: 30px;
+    border-color: rgba(10,10,10,0.5);
+    height: 45px;
+    width: 45px;
+    min-width: 42px;
+    min-height: 45px;
+    text-align: center;
+    border-radius: 10px;
+    text-shadow: 2px 2px rgb(8, 8, 8);
+    border: double 1px rgba(0, 217, 255, 0.9);
+    border-radius: 10px/10px;
+    box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
+}
+
+table {
+    position: relative;
+    left:50%;
+    transform: translate(-50%, 0%);
+}
+
+.shown-cell {
+    background: rgb(60,60,60);
+    background: linear-gradient(0deg, rgba(60,60,60,0.3) 0%, rgba(87,87,87,0.3) 1%, rgba(255, 2, 200, 0.651) 5%, rgba(0, 255, 242, 0.733) 80%);
+}
+
+.bomb-cell {
+    background: rgb(60,60,60);
+    background: linear-gradient(45deg, rgba(60,60,60,0.3) 0%, rgba(87,87,87,0.3) 1%, rgb(255, 0, 0) 5%, rgba(255, 0, 0, 0.3) 80%);
+}
+
+.time-div {
+    font-size: 30px;
+    padding: 5px;
+}
+
+span {
+    font-size: 30px;
+}
+
+#difficulty {
+    font-size: 15px;
+    height:40px;
+    width: 140px;
+    border-radius: 10px/10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
+    border: double 1px rgba(255, 0, 140, 0.9);
+    background-color: rgba(8, 8, 8, 0.1);
+    color: rgba(255, 0, 140, 0.9);
+    font-size: 50px;
+    font-family: "Train One", sans-serif;
+    font-size: 24px;
+}
+
+.gameInfo {
+    padding-bottom: 20px;
+}
+
+.msg {
+    font-size: 200%;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -0%);
+    background-color: rgb(8, 8, 8, 0.9);
+    border: double 1px rgba(0, 217, 255, 0.9);
+    padding: 20px;
+    box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
+    border-radius: 10px/10px;
+}
+
+button {
+    border-radius: 10px/10px;
+    height:50px;
+    position: relative;
+    width: 50%;
+    left: 25%;
+    transform: translate(-50%, -0%);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
+    border: double 1px rgba(255, 0, 140, 0.9);
+    background-color: rgba(8, 8, 8, 0.1);
+    color: rgba(255, 0, 140, 0.9);
+    font-size: 50px;
+    font-family: "Train One", sans-serif;
+    font-size: 24px;
+    margin: 20px;
+}
+
+button:hover {
+    background-color: rgba(255, 0, 221, 0.9);
+    color: rgb(0, 247, 255);
+}
+
+.title {
+    text-shadow: 2px 3px rgba(0, 238, 255, 0.7);
+    padding: 20px;
+}
+
+.life-container {
+    padding: 5px;
+    padding-left: 10px;
+    margin-top: 20px;
+    font-size: 27px;
+    border: double 1px rgba(0, 217, 255, 0.9);
+    border-radius: 10px/10px;
+    box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
+    height: 40px;
+}
+
+.smiley {
+    padding: 5px;
+    font-size: 27px;
+    border: double 1px rgba(0, 217, 255, 0.9);
+    border-radius: 10px/10px;
+    box-shadow: 3px 3px 10px -1px rgba(255, 0, 140, 0.9);
+    height: 40px;
+}
