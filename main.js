@@ -16,8 +16,6 @@ var gLevel = {
 
 var gGame = {
     isOn: false,
-    shownCount: 0,
-    markedCount: 0,
     secsPassed: 0
 };
 
@@ -58,7 +56,10 @@ function buildBoard() {
                 minesAroundCount: 0,
                 isShown: false,
                 isMine: false,
-                isMarked: false
+                isMarked: false,
+                wasExposed: false,
+                i:i,
+                j:j
             });
         }
     }
@@ -150,19 +151,27 @@ function cellClicked(elCell, i, j) {
         }
     } else {
         startTimer();
-        if(!gBoard[i][j].minesAroundCount) {
-            var neighbourCells = surroundings(gBoard, i, j);
-            for (var n = 0; n < neighbourCells.length; n++) {
-                if(!neighbourCells[n].isMarked) {
-                    neighbourCells[n].isShown = true;
-                }
-            }
-        }
+        exposeAround(i, j);
     }
     
     gBoard[i][j].isShown = true;
     checkGameOver();    
     renderBoard(gBoard, '.game-container');
+}
+
+function exposeAround(i, j) {
+    gBoard[i][j].wasExposed = true;
+    if(!gBoard[i][j].minesAroundCount) {
+        var neighbourCells = surroundings(gBoard, i, j);
+        for (var n = 0; n < neighbourCells.length; n++) {
+            if(!neighbourCells[n].isMarked) {
+                neighbourCells[n].isShown = true;
+                if (!neighbourCells[n].wasExposed) {
+                    exposeAround(neighbourCells[n].i, neighbourCells[n].j);
+                }
+            }
+        }
+    }
 }
 
 function cellMarked(elCell, i, j) {
@@ -211,10 +220,6 @@ function gameOver() {
     elMsg.innerHTML = `Congratulations! You have won!<br><button onclick="playAgain()">Play again`;
     elMsg.style.visibility = "visible";
     changeSmiley('😎', false);
-}
-
-function expandShown(board, elCell, i, j) {
-
 }
 
 function getCell(mat, i, j) {
