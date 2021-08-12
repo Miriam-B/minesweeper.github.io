@@ -20,6 +20,7 @@ var gGame = {
 };
 
 initGame();
+const backgroundTrack = new Audio('/sound/Brave Space Explorers.mp3').play();
 
 function initGame() {
     var elMsg = document.querySelector(".msg");
@@ -128,6 +129,7 @@ function prettyPrintCell(cell) {
 }
 
 function cellClicked(elCell, i, j) {
+    var playBoom = false;
     if(!gDidPlaceMines){
         for(var n = 0; n < gLevel.MINES; n++) {
             var row = getRandomInt(0, gLevel.SIZE - 1);
@@ -146,6 +148,7 @@ function cellClicked(elCell, i, j) {
     } else if(gBoard[i][j].isMine && !gBoard[i][j].isShown) {
         gLives --;
         changeSmiley('🤯', true);
+        playBoom = true;
         if(!gLives) {
             death();
         }
@@ -157,6 +160,11 @@ function cellClicked(elCell, i, j) {
     gBoard[i][j].isShown = true;
     checkGameOver();    
     renderBoard(gBoard, '.game-container');
+
+    if (playBoom) {
+        let boom = new Audio('/sound/explosion.flac').play()
+        boom.pause();
+    }
 }
 
 function exposeAround(i, j) {
@@ -220,6 +228,9 @@ function gameOver() {
     elMsg.innerHTML = `Congratulations! You have won!<br><button onclick="playAgain()">Play again`;
     elMsg.style.visibility = "visible";
     changeSmiley('😎', false);
+    // backgroundTrack.pause();
+    // let victory = new Audio('/sound/fanfare - victory road II.mp3').play();
+    // victory.pause();
 }
 
 function getCell(mat, i, j) {
