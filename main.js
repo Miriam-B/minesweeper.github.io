@@ -10,8 +10,8 @@ var gBoard = [];
 var gSmileyTimeout = null;
 
 var gLevel = {
-    SIZE: 4,
-    MINES: 2
+    SIZE: 6,
+    MINES: 3
 };
 
 var gGame = {
@@ -269,7 +269,7 @@ function onTimer() {
 
 function showTimer() {
     var elTimer = document.querySelector(".time-container");
-    elTimer.innerHTML = `Time: ${gGame.secsPassed}s`;
+    elTimer.innerHTML = `Time: ${gGame.secsPassed.toString().padStart(3, 0)}s`;
 }
 
 function startTimer() {
@@ -291,17 +291,21 @@ function onDifficultyChanged() {
     var elDifficulty = document.getElementById("difficulty");
     switch (elDifficulty.value) {
         case "easy":
-        gLevel.SIZE = 4;
-        gLevel.MINES = 2;
+        gLevel.SIZE = 6;
+        gLevel.MINES = 3;
         break;
         case "normal":
-        gLevel.SIZE = 8;
-        gLevel.MINES = 12;
+        gLevel.SIZE = 7;
+        gLevel.MINES = 7;
         break;
         case "hard":
-        gLevel.SIZE = 12;
-        gLevel.MINES = 30;
+        gLevel.SIZE = 10;
+        gLevel.MINES = 20;
         break;
+        case "evil":
+            gLevel.SIZE = 11;
+            gLevel.MINES = 30;
+            break;
     }
     initGame();
 }

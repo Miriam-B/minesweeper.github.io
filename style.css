@@ -4,6 +4,7 @@ body {
     background-color: rgb(8, 8, 8);
     background-image: url("./pic.jpeg");
     user-select: none;
+    overflow:;
 }
 
 .game-container {
@@ -145,7 +146,7 @@ button:hover {
 }
 
 .smiley {
-    padding: 5px;
+    padding: 0px 6px 0px 6px;
     font-size: 27px;
     border: double 1px rgba(0, 217, 255, 0.9);
     border-radius: 10px/10px;
