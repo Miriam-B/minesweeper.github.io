@@ -2,7 +2,7 @@ body {
     font-family: "Train One", sans-serif;
     color:rgba(255, 0, 140, 0.9);
     background-color: rgb(8, 8, 8);
-    background-image: url("/pic.jpeg");
+    background-image: url("pic.jpeg");
     user-select: none;
 }
 
