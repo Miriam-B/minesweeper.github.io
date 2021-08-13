@@ -20,7 +20,7 @@ var gGame = {
 };
 
 initGame();
-const backgroundTrack = new Audio('/sound/Brave Space Explorers.mp3').play();
+const backgroundTrack = new Audio('./sound/Brave Space Explorers.mp3').play();
 
 function initGame() {
     var elMsg = document.querySelector(".msg");
